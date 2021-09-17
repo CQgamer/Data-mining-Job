@@ -1,0 +1,15 @@
+#1
+
+import matplotlib.pyplot as plt
+import numpy as np
+import math
+plt.rcParams['font.sans-serif']=['SimHei']
+plt.rcParams['axes.unicode_minus'] = False
+plt.xlabel('顾客访问量')
+plt.ylabel('顾客来的概率')
+for x in range(0,7):
+    y = math.comb(6, x) * ((0.3) ** x) * ((0.7) ** (6 - x))*100
+    print('有%d位客人来的概率为%.2f%%'%(x,y))
+    plt.plot(x,y,'r*')
+plt.show()
+
